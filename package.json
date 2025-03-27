@@ -1,0 +1,41 @@
+{
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "s": "bun --watch scripts/run.ts",
+    "db:migrate": "bunx ronin diff ronin/ronin-schema.ts",
+    "db:apply": "bunx ronin apply",
+    "knip": "knip"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "4.0.17",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "autoprefixer": "^10.4.21",
+    "bcryptjs": "^3.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "jose": "^6.0.10",
+    "lucide-react": "^0.484.0",
+    "next": "15.2.4",
+    "postcss": "^8.5.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "ronin": "^6.4.3",
+    "server-only": "^0.0.1",
+    "stripe": "^17.7.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "4.0.17",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-react-aria-components": "2.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.13.14",
+    "knip": "^5.46.2",
+    "typescript": "^5.8.2"
+  }
+}
