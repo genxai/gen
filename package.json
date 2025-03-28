@@ -5,6 +5,7 @@
     "start": "next start",
     "s": "bun --watch scripts/run.ts",
     "db:migrate": "bunx ronin diff ronin/ronin-schema.ts",
+    "db:generate": "bunx ronin types",
     "db:apply": "bunx ronin apply",
     "knip": "knip"
   },
