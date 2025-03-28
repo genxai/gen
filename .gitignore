@@ -35,4 +35,4 @@ past/
 *.tsbuildinfo
 next-env.d.ts
 .vscode
-.ronin
+.ronin/config.json
