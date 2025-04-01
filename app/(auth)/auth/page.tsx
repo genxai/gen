@@ -1,5 +1,5 @@
-"use client";
-import { useForm } from "@tanstack/react-form";
+"use client"
+import { useForm } from "@tanstack/react-form"
 
 export default function Auth() {
   const form = useForm({
@@ -8,9 +8,9 @@ export default function Auth() {
       password: "",
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      console.log(value)
     },
-  });
+  })
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-black">
@@ -22,9 +22,9 @@ export default function Auth() {
 
         <form
           onSubmit={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            form.handleSubmit();
+            e.preventDefault()
+            e.stopPropagation()
+            form.handleSubmit()
           }}
           className="space-y-6"
         >
@@ -32,9 +32,9 @@ export default function Auth() {
             name="email"
             validators={{
               onChange: ({ value }) => {
-                if (!value) return "Email is required";
+                if (!value) return "Email is required"
                 if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-                  return "Invalid email";
+                  return "Invalid email"
                 }
               },
             }}
@@ -66,8 +66,8 @@ export default function Auth() {
             name="password"
             validators={{
               onChange: ({ value }) => {
-                if (!value) return "Password is required";
-                if (value.length < 6) return "Minimum 6 characters";
+                if (!value) return "Password is required"
+                if (value.length < 6) return "Minimum 6 characters"
               },
             }}
           >
@@ -103,5 +103,5 @@ export default function Auth() {
         </form>
       </div>
     </div>
-  );
+  )
 }

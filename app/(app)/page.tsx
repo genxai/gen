@@ -1,7 +1,7 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar"
 
 export default function Page() {
-  const isLoggedIn = false;
+  const isLoggedIn = false
 
   return (
     <div>
@@ -9,6 +9,6 @@ export default function Page() {
         <Navbar />
       </div>
     </div>
-  );
+  )
   // return <>{isLoggedIn ? <div>Logged in</div> : <div>Not logged in</div>}</>
 }
