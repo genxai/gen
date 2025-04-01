@@ -10,7 +10,7 @@
     "knip": "knip"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "4.0.17",
+    "@tailwindcss/postcss": "4.1.0",
     "@tanstack/react-form": "^1.2.3",
     "@types/react": "19.0.12",
     "@types/react-dom": "19.0.4",
@@ -20,25 +20,25 @@
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "jose": "^6.0.10",
-    "lucide-react": "^0.484.0",
+    "lucide-react": "^0.486.0",
     "next": "15.2.4",
     "next-themes": "^0.4.6",
     "postcss": "^8.5.3",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "ronin": "^6.4.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "ronin": "^6.4.5",
     "server-only": "^0.0.1",
-    "stripe": "^17.7.0",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss": "4.0.17",
+    "stripe": "^18.0.0",
+    "tailwind-merge": "^3.1.0",
+    "tailwindcss": "4.1.0",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "2.0.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "^22.13.14",
-    "knip": "^5.46.2",
+    "@types/node": "^22.13.17",
+    "knip": "^5.46.4",
     "typescript": "^5.8.2"
   }
 }
