@@ -55,3 +55,13 @@ a {
     display: block;
   }
 }
+
+textarea {
+  scrollbar-width: none;
+  outline: none;
+  resize: none;
+  box-shadow: 0 0 0 4px rgba(#1a1a1a, 0.3);
+  width: 100%;
+  min-height: 60px;
+  max-height: 500px;
+}

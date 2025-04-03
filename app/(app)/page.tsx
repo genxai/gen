@@ -1,17 +1,19 @@
 import Navbar from "./components/Navbar"
+import PromptComponent from "./components/PromptComponent"
+import Footer from "./components/Footer"
 
 export default function Page() {
   return (
-    <div>
+    <div className="bg-background text-foreground w-full h-screen">
+      <Navbar />
       {true && (
-        <div className="bg-blue-600 text-white text-center py-2 px-4">
-          This website is currently being worked on. Nothing works yet. Release
-          coming soon!
+        <div className="bg-inherit text-white w-full max-w-sm mx-auto rounded-4xl text-center text-xs mt-5 border border-neutral-700 py-2">
+          <p>This website is currently being worked on.</p>
+          <p>Nothing works yet. Release coming soon!</p>
         </div>
       )}
-      <div className="bg-background text-foreground w-screen h-screen">
-        <Navbar />
-      </div>
+      <PromptComponent />
+      <Footer />
     </div>
   )
 }

@@ -30,12 +30,4 @@ export const navItems: navItemProps[] = [
       { label: "GitHub", href: "/github" },
     ],
   },
-  {
-    label: "Affiliate",
-    href: "/affiliate",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
 ]
