@@ -27,6 +27,7 @@
     "postcss": "^8.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "resend": "^4.2.0",
     "ronin": "^6.4.5",
     "server-only": "^0.0.1",
     "stripe": "^18.0.0",

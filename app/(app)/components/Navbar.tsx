@@ -41,7 +41,16 @@ const NavigationItem = ({ item }: { item: navItemProps }) => {
               <div className="absolute h-0 w-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[11px] border-b-white/10" />
               <div className="absolute top-[1px] left-[1px] h-0 w-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[10px] border-b-[#27272A]" />
             </div>
-
+            {/* TODO: maybe move this button */}
+            <button
+              onClick={async () => {
+                await fetch("/api/auth/logout", { method: "POST" })
+                window.location.href = "/auth"
+              }}
+              className="text-xs font-semibold p-1.5 px-3 text-white bg-red-500 rounded-[6px] hover:bg-red-600"
+            >
+              Log Out
+            </button>
             <div className="bg-[#121212] rounded-lg border py-2 border-white/10">
               {item.dropdownItems?.map((dropdownItem) => (
                 <a
