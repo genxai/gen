@@ -17,7 +17,10 @@ export async function GET(req: NextRequest) {
 
   const tokenAge = Date.now() - new Date(user.tokenCreatedAt).getTime()
   if (tokenAge > 15 * 60 * 1000) {
-    await set.user.with({ id: user.id }).to({ token: null })
+    await set.user({
+      with: { id: user.id },
+      to: { token: null },
+    })
     return NextResponse.redirect(new URL("/auth?error=expired_token", req.url))
   }
 
@@ -26,7 +29,10 @@ export async function GET(req: NextRequest) {
     .setExpirationTime("30d")
     .sign(new TextEncoder().encode(JWT_SECRET))
 
-  await set.user.with({ id: user.id }).to({ token: null })
+  await set.user({
+    with: { id: user.id },
+    to: { token: null },
+  })
 
   const response = NextResponse.redirect(new URL("/", req.url))
   response.cookies.set("sessionToken", jwt, {

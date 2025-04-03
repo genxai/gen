@@ -13,9 +13,12 @@ export async function POST(req: NextRequest) {
     user = await add.user.with({ email })
   }
   const token = crypto.randomBytes(32).toString("hex")
-  await set.user.with({ id: user!.id }).to({
-    token,
-    tokenCreatedAt: new Date(),
+  await set.user({
+    with: { id: user!.id },
+    to: {
+      token,
+      tokenCreatedAt: new Date(),
+    },
   })
 
   if (isProd) {
