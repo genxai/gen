@@ -41,16 +41,6 @@ const NavigationItem = ({ item }: { item: navItemProps }) => {
               <div className="absolute h-0 w-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[11px] border-b-white/10" />
               <div className="absolute top-[1px] left-[1px] h-0 w-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[10px] border-b-[#27272A]" />
             </div>
-            {/* TODO: maybe move this button */}
-            <button
-              onClick={async () => {
-                await fetch("/api/auth/logout", { method: "POST" })
-                window.location.href = "/auth"
-              }}
-              className="text-xs font-semibold p-1.5 px-3 text-white bg-red-500 rounded-[6px] hover:bg-red-600"
-            >
-              Log Out
-            </button>
             <div className="bg-[#121212] rounded-lg border py-2 border-white/10">
               {item.dropdownItems?.map((dropdownItem) => (
                 <a
@@ -82,7 +72,7 @@ export default function Navbar() {
     <header className="sticky desktop-only top-0 z-50  px-4 transition-colors duration-500 shadow-none">
       <div className="mx-auto flex py-2 w-full max-w-full items-center justify-between">
         <a href="/" className="flex items-center font-extrabold text-xl gap-2">
-          GEN NEW
+          gen.new
         </a>
         <div className="flex-1 flex items-center justify-center gap-2">
           {navItems.map((item) => (
@@ -94,13 +84,7 @@ export default function Navbar() {
             href="/auth"
             className="flex items-center justify-center text-xs font-semibold p-1.5 px-3 text-white hover:text-white/80 rounded-[6px] bg-white/10 hover:bg-white/15 transition-all duration-600"
           >
-            Sign In
-          </a>
-          <a
-            href="/auth"
-            className="flex items-center justify-center text-xs font-semibold p-1.5 px-3 text-white bg-blue-500 rounded-[6px] hover:bg-blue-600 transition-all duration-600"
-          >
-            Get Started
+            Login
           </a>
         </div>
       </div>
