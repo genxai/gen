@@ -13,7 +13,8 @@ export async function middleware(req: NextRequest) {
     await jwtVerify(sessionToken, new TextEncoder().encode(JWT_SECRET))
     return NextResponse.next()
   } catch (err) {
-    return NextResponse.redirect(new URL("/auth", req.url))
+    req.cookies.delete("sessionToken")
+    return NextResponse.next()
   }
 }
 
