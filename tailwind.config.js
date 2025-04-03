@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -5,10 +7,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
   theme: {
     extend: {
       fontFamily: {

@@ -13,13 +13,12 @@ export default function Auth() {
   })
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-black">
+    <div className="w-full min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
-      <div className="relative w-[80%] mx-auto max-w-md rounded-xl bg-red-500 backdrop-blur-md p-8 shadow-lg border border-white/20">
+      <div className="relative w-[80%] mx-auto max-w-md rounded-xl backdrop-blur-md p-8 shadow-lg border border-white/20">
         <h2 className="mb-6 text-center text-2xl font-semibold text-white">
-          Welcome to Gen New
+          Sign in / Sign up
         </h2>
-
         <form
           onSubmit={(e) => {
             e.preventDefault()
@@ -96,9 +95,9 @@ export default function Auth() {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-white p-3 font-medium text-red-500 transition-colors hover:bg-neutral-white focus:outline-none"
+            className="w-full rounded-lg bg-white p-3 font-medium transition-colors hover:bg-neutral-white focus:outline-none"
           >
-            Sign In
+            Auth
           </button>
         </form>
       </div>
