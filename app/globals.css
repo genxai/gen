@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #0b0b0b;
   --foreground: #ffffff;
   --muted: #1a1a1a;
   --muted-foreground: #ffffff;
@@ -26,4 +26,34 @@ body {
 a {
   color: var(--foreground);
   text-decoration: none;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+.tablet-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tablet-only {
+    display: block;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
 }
