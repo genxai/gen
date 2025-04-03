@@ -1,7 +1,6 @@
 import "./globals.css"
 import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
-import { ThemeProvider } from "next-themes"
 
 export const metadata: Metadata = {
   title: "gen.new",
