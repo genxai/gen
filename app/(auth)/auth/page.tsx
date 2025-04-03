@@ -19,6 +19,13 @@ export default function Auth() {
     onSubmit: async ({ value }) => {
       try {
         setIsSubmitting(true)
+        // TODO: here briefly as site is prod, not to abuse resend sending
+        if (value.email !== "nikita@nikiv.dev") {
+          setError("Unauthorized email address")
+          setStatus(null)
+          setIsSubmitting(false)
+          return
+        }
         const res = await fetch("/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
