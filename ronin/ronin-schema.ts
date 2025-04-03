@@ -4,10 +4,12 @@ export const UserModel = model({
   slug: "user",
   fields: {
     email: string({ required: true, unique: true }),
-    emailVerified: boolean({ required: true, defaultValue: false }),
+    token: string(),
+    tokenCreatedAt: date(),
     name: string(),
     tokens: number({ required: true, defaultValue: 0 }),
     imageGenerationsUnlimitedUntil: date(),
+    codeGenerationsUnlimitedUntil: date(),
     admin: boolean({ required: true, defaultValue: false }),
   },
 })

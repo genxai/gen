@@ -36,3 +36,4 @@ past/
 next-env.d.ts
 .vscode
 .ronin/config.json
+.ronin/migrations

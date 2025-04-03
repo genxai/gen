@@ -4,9 +4,10 @@
     "build": "next build",
     "start": "next start",
     "s": "bun --watch scripts/run.ts",
-    "db:migrate": "bunx ronin diff ronin/ronin-schema.ts",
-    "db:generate": "bunx ronin types",
-    "db:apply": "bunx ronin apply",
+    "db:migrate": "bunx ronin diff ronin/ronin-schema.ts && bunx ronin apply",
+    "db:migrate-create": "bunx ronin diff ronin/ronin-schema.ts",
+    "db:apply-migration": "bunx ronin apply",
+    "db:types": "bunx ronin types",
     "knip": "knip"
   },
   "dependencies": {
