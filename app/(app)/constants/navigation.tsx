@@ -1,4 +1,11 @@
-import { Discord, Twitter, Reddit } from "@/app/icons/community"
+import {
+  Discord,
+  Twitter,
+  Reddit,
+  Instagram,
+  Telegram,
+  GitHub,
+} from "@/app/icons/community"
 
 export interface navItemProps {
   label: string
@@ -37,12 +44,11 @@ export const navItems: navItemProps[] = [
     dropdownDescription: "Connect with other users and share your creations",
     dropdownItems: [
       { label: "Discord", href: "/discord", icon: <Discord /> },
+      { label: "Telegram", href: "/telegram", icon: <Telegram /> },
       { label: "Twitter", href: "/x", icon: <Twitter /> },
-      { label: "Telegram", href: "/telegram" },
       { label: "Reddit", href: "/reddit", icon: <Reddit /> },
-      { label: "GitHub", href: "/github" },
-      { label: "Instagram", href: "/instagram" },
-      { label: "TikTok", href: "/tiktok" },
+      { label: "GitHub", href: "/github", icon: <GitHub /> },
+      { label: "Instagram", href: "/instagram", icon: <Instagram /> },
     ],
   },
 ]
