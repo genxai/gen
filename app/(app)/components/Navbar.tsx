@@ -4,53 +4,57 @@ import { ChevronDown } from "lucide-react"
 import React, { useState } from "react"
 import { navItems, navItemProps } from "../constants/navigation"
 
-const NavigationItem = ({ item }: { item: navItemProps }) => {
-  const [open, setOpen] = useState(false)
-
-  if (item.hasDropdown) {
-    return (
-      <div
-        className="relative"
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-      >
-        <button
-          className={`flex items-center justify-center gap-1 text-sm font-bold p-2 px-4 text-white hover:text-white/80 hover:rounded-xl hover:bg-neutral-400/10 transition-all duration-600 ${
-            open ? "text-white/80 rounded-xl bg-neutral-400/10" : ""
-          }`}
-        >
-          {item.label}
-          <ChevronDown
-            className={`w-4 h-4 transition-transform ${
-              open ? "rotate-180" : ""
-            }`}
-          />
-        </button>
-
-        <div
-          className={`absolute top-full left-0 mt-2 w-48 rounded-lg shadow-lg transition-all duration-300 ${
-            open
-              ? "opacity-100 visible translate-y-0"
-              : "opacity-0 invisible translate-y-2"
-          }`}
-          onMouseEnter={() => setOpen(true)}
-          onMouseLeave={() => setOpen(false)}
-        >
-          <div className="relative w-full h-full">
-            <div className="absolute -top-[10px] left-5 h-0 w-0">
-              <div className="absolute h-0 w-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[11px] border-b-white/10" />
-              <div className="absolute top-[1px] left-[1px] h-0 w-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[10px] border-b-[#27272A]" />
+const DropdownMenu = ({
+  isOpen,
+  content,
+  dropdownTitle,
+  dropdownDescription,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  isOpen: boolean
+  content?: Array<{
+    label: string
+    href: string
+    icon?: React.ReactNode
+  }>
+  dropdownTitle?: string
+  dropdownDescription?: string
+  onMouseEnter: () => void
+  onMouseLeave: () => void
+}) => {
+  return (
+    <div
+      className={`fixed left-1/2 -translate-x-1/2 top-[55px] w-screen rounded-lg shadow-lg transition-all duration-300 ${
+        isOpen
+          ? "opacity-100 visible translate-y-0"
+          : "opacity-0 invisible translate-y-2"
+      }`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className="relative">
+        <div className="bg-[#0b0b0b] w-full py-6">
+          <div className="max-w-screen-xl w-[60%] mx-auto grid grid-cols-2 gap-8">
+            <div className="space-y-2">
+              <h3 className="text-sm font-semibold text-white">
+                {dropdownTitle}
+              </h3>
+              <p className="text-white/70 text-xs font-medium">
+                {dropdownDescription}
+              </p>
             </div>
 
-            <div className="bg-[#121212] rounded-lg border py-2 border-white/10">
-              {item.dropdownItems?.map((dropdownItem) => (
+            <div className="grid grid-cols-2">
+              {content?.map((item) => (
                 <a
-                  key={dropdownItem.label}
-                  href={dropdownItem.href}
-                  className="block px-4 py-2 text-sm font-bold text-white/70 transition-colors"
+                  key={item.label}
+                  href={item.href}
+                  className="block px-4 py-2"
                 >
-                  <span className="text-white/70 hover:text-white transition-all duration-600">
-                    {dropdownItem.label}
+                  <span className="text-white/70 text-sm p-2 px-4 hover:bg-neutral-400/10 rounded-lg font-medium hover:text-white transition-all duration-600 flex items-center gap-2">
+                    {item.icon && <span className="w-4 h-4">{item.icon}</span>}
+                    {item.label}
                   </span>
                 </a>
               ))}
@@ -58,26 +62,70 @@ const NavigationItem = ({ item }: { item: navItemProps }) => {
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+const NavigationItem = ({
+  item,
+  activeItem,
+  onHover,
+}: {
+  item: navItemProps
+  activeItem: navItemProps | null
+  onHover: (item: navItemProps | null) => void
+}) => {
+  if (item.hasDropdown) {
+    return (
+      <button
+        className={`flex items-center justify-center gap-1 text-sm font-bold p-2 px-4 text-white hover:text-white/80 hover:rounded-xl hover:bg-neutral-400/10 transition-all duration-600`}
+        onMouseEnter={() => onHover(item)}
+      >
+        {item.label}
+        <ChevronDown className="w-4 h-4" />
+      </button>
     )
   }
 
   return (
-    <button className="flex items-center justify-center gap-1 text-sm font-bold p-2 px-4 text-white  hover:rounded-xl hover:bg-neutral-400/10 transition-all duration-600">
+    <button className="flex items-center justify-center gap-1 text-sm font-bold p-2 px-4 text-white hover:rounded-xl hover:bg-neutral-400/10 transition-all duration-600">
       <a href={item.href}>{item.label}</a>
     </button>
   )
 }
 
 export default function Navbar() {
+  const [activeItem, setActiveItem] = useState<navItemProps | null>(null)
+
+  const closeTimeout = React.useRef<NodeJS.Timeout | undefined>(undefined)
+
+  const handleMouseEnter = () => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current)
+    }
+    setActiveItem(activeItem)
+  }
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setActiveItem(null)
+    }, 100)
+  }
+
   return (
-    <header className="sticky desktop-only top-0 z-50  px-4 transition-colors duration-500 shadow-none">
+    <header className="sticky desktop-only border-b border-white/10 top-0 z-50 px-4 transition-colors duration-500 shadow-none">
       <div className="mx-auto flex py-2 w-full max-w-full items-center justify-between">
         <a href="/" className="flex items-center font-extrabold text-xl gap-2">
           gen new
         </a>
         <div className="flex-1 flex items-center justify-center gap-2">
           {navItems.map((item) => (
-            <NavigationItem key={item.label} item={item} />
+            <NavigationItem
+              key={item.label}
+              item={item}
+              activeItem={activeItem}
+              onHover={setActiveItem}
+            />
           ))}
         </div>
         <div className="flex items-center gap-1.5">
@@ -95,6 +143,15 @@ export default function Navbar() {
           </a>
         </div>
       </div>
+
+      <DropdownMenu
+        isOpen={activeItem !== null}
+        content={activeItem?.dropdownItems}
+        dropdownTitle={activeItem?.dropdownTitle}
+        dropdownDescription={activeItem?.dropdownDescription}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
     </header>
   )
 }
