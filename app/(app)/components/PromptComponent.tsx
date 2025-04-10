@@ -36,7 +36,12 @@ export default function PromptComponent() {
               console.log(me?.root.tokens, "tokens")
               console.log(typeof me?.root.tokens, "type of tokens")
               console.log(me?.root.tokens, "this")
-              if (me?.root.tokens && me.root.tokens < 1) {
+              console.log(
+                typeof me?.root.tokens === "number" && me.root.tokens < 1,
+                "value"
+              )
+              console.log(me?.root.tokens, "tokens")
+              if (typeof me?.root.tokens === "number" && me.root.tokens < 1) {
                 console.log("here?")
                 alert("You don't have enough tokens")
                 return
@@ -51,8 +56,8 @@ export default function PromptComponent() {
       </form>
       <button
         onClick={async () => {
-          if (me?.root.tokens) {
-            console.log("runs?")
+          if (typeof me?.root.tokens === "number") {
+            console.log("mutates")
             me.root.tokens = me.root.tokens + 1
           }
           console.log(me?.root.tokens, "tokens")
