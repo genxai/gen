@@ -22,7 +22,7 @@ export function JazzAndAuth({ children }: { children: ReactNode }) {
     >
       <>
         <AuthProvider>{children}</AuthProvider>
-        <JazzDevTools />
+        {/* <JazzDevTools /> */}
       </>
     </JazzProvider>
   )

@@ -17,12 +17,14 @@ pnpm-lock.yaml
 *.bike
 *.db
 .repo_ignore
+x.*
 x/
 x-*
 past-*
 past*
 past/
 *.log
+private
 
 /.pnp
 .pnp.js
@@ -35,3 +37,4 @@ past/
 *.tsbuildinfo
 next-env.d.ts
 .vscode
+bun.lock
