@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
 import { JazzAndAuth } from "./(app)/components/JazzAndAuth"
+import { ThemeProvider } from "./providers"
 
 export const metadata: Metadata = {
   title: "gen.new",
@@ -20,9 +21,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en" className={manrope.variable} suppressHydrationWarning>
       <body>
-        <JazzAndAuth>{children}</JazzAndAuth>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <JazzAndAuth>{children}</JazzAndAuth>
+        </ThemeProvider>
       </body>
     </html>
   )

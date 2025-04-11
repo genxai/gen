@@ -14,16 +14,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const id = customId || generatedId
 
     const inputClassName = clsx(
-      "w-full rounded-md border px-3.5 py-2 shadow-sm",
-      "font-medium text-stone-900",
-      "dark:text-white dark:bg-stone-925"
+      "w-full rounded-md border border-border active:border-border focus:border-border active:ring-0 focus:ring-0 focus:outline-none px-3.5 py-2 shadow-sm",
+      "font-medium text-muted-foreground",
+      "bg-muted-foreground/70"
     )
 
     const containerClassName = grid ? clsx("grid gap-1", className) : className
 
     return (
       <div className={containerClassName}>
-        <label htmlFor={id} className="mb-1 text-stone-600 dark:text-stone-300">
+        <label htmlFor={id} className="mb-1 text-muted-foreground">
           {label}
         </label>
 
