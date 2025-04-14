@@ -58,7 +58,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         "bg-blue-500 border-blue text-muted-foreground font-medium bg-blue hover:bg-blue-800 hover:border-blue-800",
       secondary:
-        "text-muted-foreground border font-medium hover:border-stone-300 hover:dark:border-stone-700 dark:text-white",
+        "text-muted-foreground border border-border font-medium hover:border-stone-300 cursor-pointer hover:dark:border-stone-700 dark:text-white",
       tertiary: "text-blue underline underline-offset-4",
       destructive:
         "bg-red-600 border-red-600 text-muted-foreground font-medium hover:bg-red-700 hover:border-red-700",

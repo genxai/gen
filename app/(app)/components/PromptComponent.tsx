@@ -3,12 +3,20 @@
 import { useAccount } from "jazz-react"
 import { useState } from "react"
 import { TiptapInput } from "./TiptapInput"
+import { Icon } from "./Icon"
 
 export default function PromptComponent() {
   const { me } = useAccount({
     root: {},
   })
   const [prompt, setPrompt] = useState("")
+
+  const actions = [
+    { icon: "image", label: "Image to Image" },
+    { icon: "image", label: "Text to Image" },
+    { icon: "code", label: "Generate Code" },
+    { icon: "image", label: "Generate Video" },
+  ]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +38,19 @@ export default function PromptComponent() {
           <p className="text-sm font-semibold text-muted-foreground/50">
             Prompt, run, edit, and generate with AI
           </p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-4">
+          {actions.map((action) => (
+            <button
+              key={action.label}
+              type="button"
+              className="flex items-center border border-border gap-2 px-4 py-2 rounded-3xl bg-inherit action-button hover:action-button-hover hover:cursor-pointer transition-colors"
+            >
+              <Icon name={action.icon} size="xs" />
+              <span className="text-xs font-medium">{action.label}</span>
+            </button>
+          ))}
         </div>
 
         <div className="hidden sm:flex w-full justify-center">

@@ -3,6 +3,7 @@
 :root {
   --background: #f3f0f0;
   --foreground: #191818;
+  --foreground-button: #e2dddd7c;
   --input: #fdf8f8;
   --muted: #1a1a1a;
   --border: #e5e3e3;
@@ -15,9 +16,10 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #121214;
+  --background: #1d1e21;
   --foreground: #ffffff;
-  --input: #39373788;
+  --foreground-button: #ada6a611;
+  --input: #3637398f;
   --muted: #1a1a1a;
   --border: #2e2e2e;
   --muted-foreground: #ffffff;
@@ -41,8 +43,18 @@ body {
   background-color: var(--input);
 }
 
+.action-button {
+  background-color: var(--background);
+}
+
+.hover\:action-button-hover:hover {
+  background-color: var(--foreground-button);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
 .border-border {
-  border-color: var(--border);
+  border: 1px solid var(--border);
 }
 
 a {
