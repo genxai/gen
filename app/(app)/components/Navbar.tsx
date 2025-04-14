@@ -103,7 +103,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky desktop-only border-b border-border bg-foreground backdrop-blur-sm top-0 z-50 px-4 transition-colors duration-500 shadow-none">
+    <header className="sticky desktop-only border-b border-border bg-foreground backdrop-blur-xl top-0 px-4 transition-colors duration-500 shadow-none">
       <div className="mx-auto flex py-2 w-full max-w-full items-center justify-between">
         <a href="/" className="flex items-center font-extrabold text-xl gap-2">
           gen new

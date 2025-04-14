@@ -68,7 +68,7 @@ const FooterItem = ({ item }: { item: footerItemProps }) => {
 }
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground w-full fixed bottom-0">
+    <footer className="bg-background desktop-only text-foreground w-full fixed bottom-0">
       <div className="mx-auto flex py-2 w-full max-w-full items-center">
         <div className="flex-1 flex items-center justify-center md:justify-end gap-2 md:pr-4">
           {footerItems.map((item) => (
