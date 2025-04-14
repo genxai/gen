@@ -26,10 +26,8 @@ const DropdownMenu = ({
 }) => {
   return (
     <div
-      className={`fixed left-1/2 -translate-x-1/2 top-[50px] w-screen rounded-lg shadow-lg transition-all duration-300 ${
-        isOpen
-          ? "opacity-100 visible translate-y-0"
-          : "opacity-0 invisible translate-y-2"
+      className={`fixed left-1/2 -translate-x-1/2 top-[50px] bg-background backdrop-blur-sm transition-all duration-300 w-screen rounded-lg shadow-lg ${
+        isOpen ? "opacity-100" : "opacity-0 invisible translate-y-2"
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -103,7 +101,10 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky desktop-only border-b border-border bg-foreground backdrop-blur-xl top-0 px-4 transition-colors duration-500 shadow-none">
+    <header
+      className="sticky desktop-only bg-foreground backdrop-blur-xl top-0 px-4 transition-colors duration-500 shadow-none"
+      style={{ zIndex: 50 }}
+    >
       <div className="mx-auto flex py-2 w-full max-w-full items-center justify-between">
         <a href="/" className="flex items-center font-extrabold text-xl gap-2">
           gen new

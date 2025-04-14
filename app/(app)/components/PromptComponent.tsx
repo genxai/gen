@@ -29,13 +29,13 @@ export default function PromptComponent() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center h-[80vh] sm:h-[60vh] max-w-5xl mx-auto px-4"
+        className="flex flex-col mt-15 items-center justify-center h-[80vh] sm:h-[60vh] max-w-5xl mx-auto px-4"
       >
         <div className="flex flex-col items-center text-center gap-4 mb-8">
-          <p className="text-3xl sm:text-3xl lg:text-4xl font-semibold">
+          <p className="text-2xl lg:text-3xl font-medium">
             What do you want to generate?
           </p>
-          <p className="text-sm font-semibold text-muted-foreground/50">
+          <p className="text-sm font-semibold opacity-80">
             Prompt, run, edit, and generate with AI
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function PromptComponent() {
           />
         </div>
       </form>
-      <button
+      {/* <button
         onClick={async () => {
           if (typeof me?.root.tokens === "number") {
             me.root.tokens = me.root.tokens + 1
@@ -103,7 +103,7 @@ export default function PromptComponent() {
         }}
       >
         Give tokens
-      </button>
+      </button> */}
     </>
   )
 }
