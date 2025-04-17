@@ -101,6 +101,7 @@ const icons = {
   zip: FolderArchiveIcon,
   info: InfoIcon,
   left: ArrowLeftIcon,
+  right: ArrowRightIcon,
 }
 
 // copied from tailwind line height https://tailwindcss.com/docs/font-size

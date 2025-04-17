@@ -5,6 +5,8 @@
   --foreground: #191818;
   --foreground-button: #e2dddd7c;
   --input: #fdf8f8;
+  --prompt-box-input: #dfdcdc;
+  --prompt-input: #ecebeb;
   --muted: #1a1a1a;
   --border: #e5e3e3;
   --muted-foreground: #191818;
@@ -16,10 +18,12 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #1d1e21;
-  --foreground: #ffffff;
+  --background: #151516;
+  --foreground: #fffbfbbe;
   --foreground-button: #ada6a611;
-  --input: #3637398f;
+  --input: #40404269;
+  --prompt-box-input: #22222378;
+  --prompt-input: #151516;
   --muted: #1a1a1a;
   --border: #444343ce;
   --muted-foreground: #ffffff;
@@ -43,6 +47,14 @@ body {
   background-color: var(--input);
 }
 
+.bg-prompt-box-input {
+  background-color: var(--prompt-box-input);
+}
+
+.bg-prompt-input {
+  background-color: var(--prompt-input);
+}
+
 .action-button {
   background-color: var(--background);
 }
@@ -54,7 +66,7 @@ body {
 }
 
 .border-border {
-  border: 1px solid var(--border);
+  border-color: var(--border);
 }
 
 a {
@@ -100,4 +112,17 @@ textarea {
   width: 100%;
   min-height: 60px;
   max-height: 500px;
+}
+
+.scroll-hidden {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
