@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - argon2
+  - better-sqlite3
+  - sharp

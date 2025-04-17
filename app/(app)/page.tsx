@@ -1,6 +1,5 @@
 "use client"
 
-import { useAuth } from "../contexts/Auth"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
 import PromptComponent from "./components/PromptComponent"
