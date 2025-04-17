@@ -5,6 +5,8 @@
 
 ```
 pnpm i
+pnpm generate
+pnpm migrate
 ```
 
 ## Run

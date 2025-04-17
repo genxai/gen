@@ -38,3 +38,4 @@ private
 next-env.d.ts
 .vscode
 bun.lock
+better-auth_migrations
