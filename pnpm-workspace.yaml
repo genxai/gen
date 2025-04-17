@@ -1,5 +1,11 @@
+packages:
+  - "app"
+  - "lib"
+  - "auth"
+  - "scripts"
+
 onlyBuiltDependencies:
-  - '@biomejs/biome'
+  - "@biomejs/biome"
   - argon2
   - better-sqlite3
   - sharp

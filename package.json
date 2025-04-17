@@ -1,67 +1,67 @@
 {
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"s": "bun --watch scripts/run.ts",
-		"knip": "knip",
-		"generate": "yes | npx @better-auth/cli generate --config ./auth/auth.ts",
-		"migrate": "yes | npx @better-auth/cli migrate --config ./auth/auth.ts"
-	},
-	"dependencies": {
-		"@icons-pack/react-simple-icons": "^12.5.0",
-		"@tailwindcss/postcss": "^4.1.3",
-		"@tanstack/react-form": "^1.3.0",
-		"@types/react": "19.1.0",
-		"@types/react-dom": "19.1.1",
-		"argon2": "^0.41.1",
-		"autoprefixer": "^10.4.21",
-		"bcryptjs": "^3.0.2",
-		"better-auth": "^1.2.5",
-		"better-sqlite3": "^11.9.1",
-		"class-variance-authority": "^0.7.1",
-		"clsx": "^2.1.1",
-		"cojson": "https://pkg.pr.new/garden-co/jazz/cojson@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"dotenv": "^16.4.7",
-		"jazz-auth-cloudauth": "https://pkg.pr.new/garden-co/jazz/jazz-auth-cloudauth@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-betterauth-client-plugin": "https://pkg.pr.new/garden-co/jazz/jazz-betterauth-client-plugin@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-betterauth-server-plugin": "https://pkg.pr.new/garden-co/jazz/jazz-betterauth-server-plugin@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-inspector": "https://pkg.pr.new/garden-co/jazz/jazz-inspector@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-nodejs": "https://pkg.pr.new/garden-co/jazz/jazz-nodejs@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-react": "https://pkg.pr.new/garden-co/jazz/jazz-react@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-react-auth-cloudauth": "https://pkg.pr.new/garden-co/jazz/jazz-react-auth-cloudauth@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-react-core": "https://pkg.pr.new/garden-co/jazz/jazz-react-core@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jazz-tools": "https://pkg.pr.new/garden-co/jazz/jazz-tools@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
-		"jose": "^6.0.10",
-		"lucide-react": "^0.487.0",
-		"next": "15.2.4",
-		"next-themes": "^0.4.6",
-		"postcss": "^8.5.3",
-		"react": "19.1.0",
-		"react-dom": "19.1.0",
-		"resend": "^4.2.0",
-		"server-only": "^0.0.1",
-		"stripe": "^18.0.0",
-		"tailwind-merge": "^3.2.0",
-		"tailwindcss": "^4.1.3",
-		"tailwindcss-animate": "^1.0.7",
-		"tailwindcss-react-aria-components": "2.0.0",
-		"zod": "^3.24.2"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@types/better-sqlite3": "^7.6.13",
-		"@types/node": "^22.14.0",
-		"knip": "^5.47.0",
-		"typescript": "^5.8.3"
-	},
-	"prettier": {
-		"semi": false
-	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"better-sqlite3",
-			"argon2"
-		]
-	}
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "s": "bun --watch scripts/run.ts",
+    "knip": "knip",
+    "generate": "yes | npx @better-auth/cli generate --config ./auth/auth.ts",
+    "migrate": "yes | npx @better-auth/cli migrate --config ./auth/auth.ts"
+  },
+  "dependencies": {
+    "@icons-pack/react-simple-icons": "^12.5.0",
+    "@tailwindcss/postcss": "^4.1.3",
+    "@tanstack/react-form": "^1.3.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "argon2": "^0.41.1",
+    "autoprefixer": "^10.4.21",
+    "bcryptjs": "^3.0.2",
+    "better-auth": "^1.2.5",
+    "better-sqlite3": "^11.9.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cojson": "https://pkg.pr.new/garden-co/jazz/cojson@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "dotenv": "^16.4.7",
+    "jazz-auth-cloudauth": "https://pkg.pr.new/garden-co/jazz/jazz-auth-cloudauth@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-betterauth-client-plugin": "https://pkg.pr.new/garden-co/jazz/jazz-betterauth-client-plugin@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-betterauth-server-plugin": "https://pkg.pr.new/garden-co/jazz/jazz-betterauth-server-plugin@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-inspector": "https://pkg.pr.new/garden-co/jazz/jazz-inspector@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-nodejs": "https://pkg.pr.new/garden-co/jazz/jazz-nodejs@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-react": "https://pkg.pr.new/garden-co/jazz/jazz-react@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-react-auth-cloudauth": "https://pkg.pr.new/garden-co/jazz/jazz-react-auth-cloudauth@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-react-core": "https://pkg.pr.new/garden-co/jazz/jazz-react-core@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jazz-tools": "https://pkg.pr.new/garden-co/jazz/jazz-tools@b5a2d2ea6731110a1712bb1339bf5d7a0e008c64",
+    "jose": "^6.0.10",
+    "lucide-react": "^0.487.0",
+    "next": "15.2.4",
+    "next-themes": "^0.4.6",
+    "postcss": "^8.5.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "resend": "^4.2.0",
+    "server-only": "^0.0.1",
+    "stripe": "^18.0.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.3",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-react-aria-components": "2.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.14.0",
+    "knip": "^5.47.0",
+    "typescript": "^5.8.3"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "argon2"
+    ]
+  }
 }
