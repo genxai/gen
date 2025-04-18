@@ -1,7 +1,8 @@
 "use client"
 
 import { clsx } from "clsx"
-import { forwardRef, useId, useEffect, useRef } from "react"
+import { forwardRef, useId, useEffect, useRef, useState } from "react"
+import { Icon } from "./Icon"
 
 interface TiptapInputProps
   extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, "onChange"> {
@@ -35,6 +36,7 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
     const generatedId = useId()
     const id = customId || generatedId
     const textareaRef = useRef<HTMLTextAreaElement>(null)
+    const [showIcons, setShowIcons] = useState(false)
 
     const adjustHeight = () => {
       const textarea = textareaRef.current
@@ -63,6 +65,13 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
 
     const containerClassName = grid ? clsx("grid gap-1", className) : className
 
+    const actions = [
+      { icon: "image", label: "Image" },
+      { icon: "code", label: "Code" },
+      { icon: "file", label: "File" },
+      { icon: "write", label: "Write" },
+    ]
+
     return (
       <div className={containerClassName}>
         {label && (
@@ -71,23 +80,54 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
           </label>
         )}
 
-        <textarea
-          ref={(element) => {
-            if (typeof ref === "function") {
-              ref(element)
-            } else if (ref) {
-              ref.current = element
-            }
-            textareaRef.current = element
-          }}
-          {...textareaProps}
-          id={id}
-          value={value}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder}
-          rows={1}
-        />
+        <div className="relative flex flex-col gap-2">
+          <textarea
+            ref={(element) => {
+              if (typeof ref === "function") {
+                ref(element)
+              } else if (ref) {
+                ref.current = element
+              }
+              textareaRef.current = element
+            }}
+            {...textareaProps}
+            id={id}
+            value={value}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder}
+            rows={1}
+          />
+
+          <div className="flex mb-3 mr-1 justify-end">
+            <div
+              className="relative"
+              onMouseEnter={() => setShowIcons(true)}
+              onMouseLeave={() => setShowIcons(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center justify-center size-5 rounded-md bg-input hover:cursor-pointer transition-colors"
+              >
+                <Icon name="add" size="xs" />
+              </button>
+
+              {showIcons && (
+                <div className="absolute bottom-0 right-full flex items-center gap-2 pr-2">
+                  {actions.map((action) => (
+                    <button
+                      key={action.label}
+                      type="button"
+                      className="flex items-center justify-center size-5 rounded-md bg-input hover:cursor-pointer hover:bg-foreground/20 transition-colors"
+                    >
+                      <Icon name={action.icon} size="xs" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
