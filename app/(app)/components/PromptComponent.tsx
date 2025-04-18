@@ -45,10 +45,10 @@ export default function PromptComponent() {
             <button
               key={action.label}
               type="button"
-              className="flex items-center border border-border gap-2 rounded-xl bg-inherit action-button hover:action-button-hover hover:cursor-pointer transition-colors"
+              className="flex items-center border border-border gap-2 p-3 rounded-xl bg-inherit action-button hover:action-button-hover hover:cursor-pointer transition-colors"
             >
               <Icon name={action.icon} size="xs" />
-              <span className="text-xs font-medium">{action.label}</span>
+              <span className="text-[13px] font-semibold">{action.label}</span>
             </button>
           ))}
         </div>

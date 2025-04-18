@@ -33,7 +33,7 @@ const DropdownMenu = ({
       onMouseLeave={onMouseLeave}
     >
       <div className="relative">
-        <div className="bg-foreground w-full py-6">
+        <div className="w-full py-6">
           <div className="max-w-screen-xl w-[60%] mx-auto grid grid-cols-2 gap-8">
             <div className="space-y-2">
               <h3 className="text-sm font-semibold text-muted-foreground">
@@ -102,7 +102,7 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky desktop-only bg-foreground backdrop-blur-xl top-0 px-4 transition-colors duration-500 shadow-none"
+      className="sticky desktop-only backdrop-blur-xl top-0 px-4 transition-colors duration-500 shadow-none"
       style={{ zIndex: 50 }}
     >
       <div className="mx-auto flex py-2 w-full max-w-full items-center justify-between">

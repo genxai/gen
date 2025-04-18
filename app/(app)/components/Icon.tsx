@@ -49,6 +49,7 @@ import {
   UsersIcon,
   WifiOffIcon,
   XIcon,
+  PaperclipIcon,
 } from "lucide-react"
 
 const icons = {
@@ -102,6 +103,7 @@ const icons = {
   info: InfoIcon,
   left: ArrowLeftIcon,
   right: ArrowRightIcon,
+  paperclip: PaperclipIcon,
 }
 
 // copied from tailwind line height https://tailwindcss.com/docs/font-size

@@ -43,6 +43,14 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+.bg-foreground {
+  background-color: var(--foreground);
+}
+
+.bg-foreground-button {
+  background-color: var(--foreground-button);
+}
+
 .bg-input {
   background-color: var(--input);
 }

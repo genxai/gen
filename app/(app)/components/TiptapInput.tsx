@@ -66,10 +66,9 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
     const containerClassName = grid ? clsx("grid gap-1", className) : className
 
     const actions = [
-      { icon: "image", label: "Image" },
+      { icon: "browser", label: "Browser" },
       { icon: "code", label: "Code" },
-      { icon: "file", label: "File" },
-      { icon: "write", label: "Write" },
+      { icon: "paperclip", label: "Upload" },
     ]
 
     return (
@@ -107,7 +106,10 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
             >
               <button
                 type="button"
-                className="flex items-center justify-center size-5 rounded-md bg-input hover:cursor-pointer transition-colors"
+                className={clsx(
+                  "flex items-center justify-center size-5 rounded-md bg-input hover:cursor-pointer transition-colors",
+                  showIcons && "bg-inherit opacity-50"
+                )}
               >
                 <Icon name="add" size="xs" />
               </button>
@@ -118,7 +120,7 @@ export const TiptapInput = forwardRef<HTMLTextAreaElement, TiptapInputProps>(
                     <button
                       key={action.label}
                       type="button"
-                      className="flex items-center justify-center size-5 rounded-md bg-input hover:cursor-pointer hover:bg-foreground/20 transition-colors"
+                      className="flex items-center justify-center size-5 rounded-md bg-input hover:opacity-80 hover:cursor-pointer transition-colors"
                     >
                       <Icon name={action.icon} size="xs" />
                     </button>
